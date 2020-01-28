@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour
     public float turnRotation = 360;
     public float speed = 10;
 
+    public Rigidbody rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void Update()
     {
         float moveAxis = Input.GetAxis(inputAxis);
@@ -28,6 +35,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move( float Input)
     {
+      //rb.AddForce
       
     }
     private void Turn(float Input)
