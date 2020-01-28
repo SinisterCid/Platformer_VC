@@ -12,8 +12,28 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        
+        float moveAxis = Input.GetAxis(inputAxis);
+        float turnAxis = Input.GetAxis(inputTurn);
+
+        CharacterMovement(moveAxis,turnAxis);
     }
 
+    public void CharacterMovement (float moveInput, float turnInput) {
 
+        Move(moveInput);
+        Turn(turnInput);
+    }
+
+  
+
+    private void Move( float Input)
+    {
+      
+    }
+    private void Turn(float Input)
+    {
+
+    }
+
+    
 }
