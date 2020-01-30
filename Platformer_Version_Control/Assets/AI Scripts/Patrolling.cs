@@ -14,6 +14,11 @@ public class Patrolling : MonoBehaviour
 
     float timer = 0;
 
+    private void Start()
+    {
+
+    }
+
     // Update is called once per frame
     void Update()
     {

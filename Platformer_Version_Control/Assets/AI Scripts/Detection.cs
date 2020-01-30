@@ -34,4 +34,11 @@ public class Detection : MonoBehaviour
         }
 
     }
+
+    public void ResetPatrol()
+    {
+
+        animator.SetBool("SpotTarget", false);
+        animator.SetBool("Hurt", false);
+    }
 }
