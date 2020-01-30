@@ -18,6 +18,9 @@ public class SkuaPatrol : StateMachineBehaviour
 
         Patrolling script = animator.GetComponent<Patrolling>();
         script.Rotate();
+
+        Detection script2 = animator.GetComponent<Detection>();
+        script2.Detect();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
