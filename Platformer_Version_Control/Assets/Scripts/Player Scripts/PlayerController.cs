@@ -4,44 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private string inputAxis = "move";
-    private string inputTurn = "turn";
+    Rigidbody rb;
+    public float speed;
 
-    public float turnRotation = 360;
-    public float speed = 10;
-
-    public Rigidbody rb;
-
-    private void Start()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
-
-    private void Update()
+    void FixedUpdate()
     {
-        float moveAxis = Input.GetAxis(inputAxis);
-        float turnAxis = Input.GetAxis(inputTurn);
-
-        CharacterMovement(moveAxis,turnAxis);
+        float moveHor = Input.GetAxis("Horizontal");
+        float moveVer = Input.GetAxis("Vertical");
+        rb.velocity = new Vector3(moveHor * speed, rb.velocity.y, moveVer * speed);
     }
 
-    public void CharacterMovement (float moveInput, float turnInput) {
 
-        Move(moveInput);
-        Turn(turnInput);
-    }
 
-  
-
-    private void Move( float Input)
-    {
-      //rb.AddForce
-      
-    }
-    private void Turn(float Input)
-    {
-
-    }
-
-    
 }
