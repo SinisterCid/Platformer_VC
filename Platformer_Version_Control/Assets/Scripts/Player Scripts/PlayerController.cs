@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+<<<<<<< HEAD
     public GameObject playerModel;
     Rigidbody my_Rigidbody;
     public float speed;
+=======
+    Rigidbody rb;
+    public float speed = 10;
+>>>>>>> Vicbranch
 
     void Start()
     {
