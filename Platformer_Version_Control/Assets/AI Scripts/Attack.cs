@@ -45,7 +45,7 @@ public class Attack : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, player.position, step2);
         }
 
-        if (distance <= 1.5f)
+        if (distance <= 1.6f)
         {
 
             animator.SetBool("Carry", true);
