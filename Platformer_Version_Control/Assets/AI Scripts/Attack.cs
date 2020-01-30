@@ -9,10 +9,15 @@ public class Attack : MonoBehaviour
     public float farSpeed;
     public float closeSpeed;
 
+    Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        animator = gameObject.GetComponent<Animator>();
+
     }
 
     // Update is called once per frame
@@ -33,11 +38,17 @@ public class Attack : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, player.position, step1);
         }
 
-        if (distance <= 10)
+        if (distance < 10)
         {
 
             float step2 = closeSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, player.position, step2);
+        }
+
+        if (distance <= 1)
+        {
+
+            animator.SetBool("Carry", true);
         }
     }
 }
