@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-<<<<<<< HEAD
-    public GameObject playerModel;
+
+
     Rigidbody my_Rigidbody;
-    public float speed;
-=======
-    Rigidbody rb;
     public float speed = 10;
->>>>>>> Vicbranch
+
 
     void Start()
     {
@@ -21,7 +18,7 @@ public class PlayerController : MonoBehaviour
     {
         float moveHor = Input.GetAxis("Horizontal");
         float moveVer = Input.GetAxis("Vertical");
-        playerModel.transform.Translate(new Vector3(moveHor, 0, moveVer));
+      my_Rigidbody.velocity= (new Vector3(moveHor * speed , 0, moveVer * speed));
     }
 
 
