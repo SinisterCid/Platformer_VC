@@ -10,7 +10,7 @@ public class GameMenu : MonoBehaviour
     // Start is called before the first frame update
     void StartButton()
     {
-        SceneManager.LoadScene("Playscene", LoadSceneMode.Single);
+        SceneManager.LoadScene("Playscene");
     }
 
     // Update is called once per frame
