@@ -14,6 +14,8 @@ public class SkuaRetreat : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        Retreat script = animator.GetComponent<Retreat>();
+        script.Retreating();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
