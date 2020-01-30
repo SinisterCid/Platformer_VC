@@ -14,6 +14,8 @@ public class SkuaLiftAway : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        LiftAway script = animator.GetComponent<LiftAway>();
+        script.LiftingAway();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
