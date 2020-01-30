@@ -10,19 +10,18 @@ public class GameMenu : MonoBehaviour
     // Start is called before the first frame update
     public void StartButton()
     {
-        StartCoroutine(WaitButton());      
-    }
-
-    IEnumerator WaitButton()
-    {
-        yield return new WaitForSeconds(3);
-        SceneManager.LoadScene("Playscene", LoadSceneMode.Single);
-
+        SceneManager.LoadScene("Playscene", LoadSceneMode.Single);   
     }
 
     // Update is called once per frame
     public void QuitButton()
     {
-        Application.Quit();
+        StartCoroutine(Waitsegment());
+    }
+
+    IEnumerator Waitsegment()
+    {
+        yield return new WaitForSeconds(3);
+        Application.Quit();  
     }
 }
