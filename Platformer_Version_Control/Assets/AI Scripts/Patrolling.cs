@@ -18,10 +18,10 @@ public class Patrolling : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime * rotSpeed;
-        Rotate();
+        //Rotate();
     }
 
-    void Rotate()
+    public void Rotate()
     {
         if (rotateClockwise)
         {

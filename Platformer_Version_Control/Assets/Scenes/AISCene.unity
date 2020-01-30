@@ -468,7 +468,7 @@ MonoBehaviour:
   zSpread: 5
   yOffset: 0
   centerPoint: {fileID: 404562502}
-  rotSpeed: 3
+  rotSpeed: 2
   rotateClockwise: 1
 --- !u!1 &404562501
 GameObject:
@@ -577,7 +577,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043862280}
   m_LocalRotation: {x: 0.3915957, y: -0, z: -0, w: 0.92013747}
-  m_LocalPosition: {x: -0.3, y: 19.12, z: -17.66}
+  m_LocalPosition: {x: -0.3, y: 24.2, z: -22.51}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

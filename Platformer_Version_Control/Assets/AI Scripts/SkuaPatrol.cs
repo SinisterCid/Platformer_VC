@@ -16,6 +16,8 @@ public class SkuaPatrol : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        Patrolling script = animator.GetComponent<Patrolling>();
+        script.Rotate();
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
