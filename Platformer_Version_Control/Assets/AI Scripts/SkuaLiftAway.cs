@@ -4,18 +4,23 @@ using UnityEngine;
 
 public class SkuaLiftAway : StateMachineBehaviour
 {
+
+    public float upSpeed;
+    private Transform playerPos;
+    Transform animatorPos;
+
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-    }
+        animatorPos = animator.transform;
+        }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-        LiftAway script = animator.GetComponent<LiftAway>();
-        script.LiftingAway();
+        animator.transform.position += Vector3.up * Time.deltaTime * upSpeed;
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
@@ -24,15 +29,24 @@ public class SkuaLiftAway : StateMachineBehaviour
 
     }
 
-    //OnStateMove is called right after Animator.OnAnimatorMove()
-    override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    private void OnCollisionEnter(Collision collision)
     {
-        // Implement code that processes and affects root motion
+        if (collision.gameObject.tag == "Player")
+        {
+
+            collision.transform.parent = animatorPos;
+        }
     }
 
-    //OnStateIK is called right after Animator.OnAnimatorIK()
-    override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    {
-        // Implement code that sets up animation IK (inverse kinematics)
-    }
+    ////OnStateMove is called right after Animator.OnAnimatorMove()
+    //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    // Implement code that processes and affects root motion
+    //}
+
+    ////OnStateIK is called right after Animator.OnAnimatorIK()
+    //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    //{
+    //    // Implement code that sets up animation IK (inverse kinematics)
+    //}
 }
