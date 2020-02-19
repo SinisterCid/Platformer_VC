@@ -5,13 +5,16 @@ using UnityEngine;
 public class SkuaRetreat : StateMachineBehaviour
 {
 
+    //Variables
     private Transform orbitPos;
     public float speed;
+    public float stopDistance;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        //Reference origin of orbit
         orbitPos = GameObject.FindGameObjectWithTag("Orbit").transform;
     }
 
@@ -19,12 +22,15 @@ public class SkuaRetreat : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        //Distance between origin of orbit and current position of skua
         float distance = Vector3.Distance(orbitPos.position, animator.transform.position);
 
+        //Move towards origin of orbit at X speed
         float step = speed * Time.deltaTime;
         animator.transform.position = Vector3.MoveTowards(animator.transform.position, orbitPos.position, step);
 
-        if (distance <= 1.5f)
+        //If distance to origin or orbit is small enough, set animation bools to false and return to patrol state
+        if (distance <= stopDistance)
         {
 
             animator.SetBool("SpotTarget", false);

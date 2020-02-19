@@ -10,12 +10,16 @@ public class GameMenu : MonoBehaviour
     // Start is called before the first frame update
     void StartButton()
     {
+
+        //Load game scene when play button is pressed
         SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);
     }
 
     // Update is called once per frame
     void QuitButton()
     {
+
+        //Exit the game when quit button is pressed
         Application.Quit();
     }
 }

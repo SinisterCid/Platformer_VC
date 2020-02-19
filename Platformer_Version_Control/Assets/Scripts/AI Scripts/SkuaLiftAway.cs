@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkuaLiftAway : StateMachineBehaviour
 {
 
+    //Variables
     public float upSpeed;
     private Transform playerPos;
     Transform animatorPos;
@@ -13,6 +14,7 @@ public class SkuaLiftAway : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        //Reference position of skua and player
         animatorPos = animator.transform;
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
     }
@@ -21,7 +23,10 @@ public class SkuaLiftAway : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        //Skua flies upwards when in this state at X speed
         animator.transform.position += Vector3.up * Time.deltaTime * upSpeed;
+
+        //When within distance, make player object a child to the skua
         playerPos.parent = animatorPos;
     }
 

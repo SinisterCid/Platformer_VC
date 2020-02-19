@@ -6,22 +6,24 @@ public class SkuaPatrol : StateMachineBehaviour
 
 {
 
+    //Get position of player and origin in which skua will orbit around
     private Transform playerPos;
     private Transform orbitPos;
 
+    //Variables to determine parameters of the orbiting
     public float xSpread;
     public float zSpread;
     public float yOffset;
     public float rotSpeed;
     public bool rotateClockwise;
     public float distanceToAttack;
-
     float timer = 0;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        //Reference player and orbit origin point
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
         orbitPos = GameObject.FindGameObjectWithTag("Orbit").transform;
 
@@ -31,8 +33,10 @@ public class SkuaPatrol : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
+        //Determine speed
         timer += Time.deltaTime * rotSpeed;
 
+        //Rotation pattern and direction
         if (rotateClockwise)
         {
             float x = -Mathf.Cos(timer) * xSpread;
@@ -48,8 +52,10 @@ public class SkuaPatrol : StateMachineBehaviour
             animator.transform.position = pos + orbitPos.position;
         }
 
+        //Measure distance between skua and player
         float distance = Vector3.Distance(playerPos.transform.position, animator.transform.position);
 
+        //If player is within a certain distance, set bool to change to attack state
         if (distance <= distanceToAttack)
         {
 

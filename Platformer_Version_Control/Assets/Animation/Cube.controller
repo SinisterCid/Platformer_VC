@@ -261,6 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  stopDistance: 6
 --- !u!1101 &3075752048383181715
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
