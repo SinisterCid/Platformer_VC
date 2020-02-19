@@ -14,6 +14,7 @@ public class SkuaPatrol : StateMachineBehaviour
     public float yOffset;
     public float rotSpeed;
     public bool rotateClockwise;
+    public float distanceToAttack;
 
     float timer = 0;
 
@@ -49,7 +50,7 @@ public class SkuaPatrol : StateMachineBehaviour
 
         float distance = Vector3.Distance(playerPos.transform.position, animator.transform.position);
 
-        if (distance <= 6)
+        if (distance <= distanceToAttack)
         {
 
             animator.SetBool("SpotTarget", true);

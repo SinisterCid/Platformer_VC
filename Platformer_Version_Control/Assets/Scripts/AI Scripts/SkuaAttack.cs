@@ -6,6 +6,7 @@ public class SkuaAttack : StateMachineBehaviour
 {
 
     private Transform playerPos;
+    private Transform stickPos;
     public float speed;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
@@ -13,6 +14,8 @@ public class SkuaAttack : StateMachineBehaviour
     {
 
         playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+        stickPos = GameObject.FindGameObjectWithTag("Stick").transform;
+
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -22,12 +25,21 @@ public class SkuaAttack : StateMachineBehaviour
         animator.transform.position = Vector3.MoveTowards(animator.transform.position, playerPos.position, speed * Time.deltaTime);
 
         float distance = Vector3.Distance(playerPos.transform.position, animator.transform.position);
+        float distanceToStick = Vector3.Distance(stickPos.transform.position, animator.transform.position);
 
         if (distance <= 1)
         {
 
             animator.SetBool("Carry", true);
         }
+
+        if (distanceToStick <= 1.25f)
+        {
+
+            animator.SetBool("Hurt", true);
+        }
+
+
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,6 +22,14 @@ public class PlayerController : MonoBehaviour
       rb.velocity= (new Vector3(moveHor * speed, rb.velocity.y, moveVer * speed));
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
 
+        if (collision.gameObject.tag == "Killzone")
+        {
+
+            SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);
+        }
+    }
 
 }

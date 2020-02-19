@@ -14,28 +14,21 @@ public class SkuaLiftAway : StateMachineBehaviour
     {
 
         animatorPos = animator.transform;
-        }
+        playerPos = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
         animator.transform.position += Vector3.up * Time.deltaTime * upSpeed;
+        playerPos.parent = animatorPos;
     }
 
     //OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
 
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-
-            collision.transform.parent = animatorPos;
-        }
     }
 
     ////OnStateMove is called right after Animator.OnAnimatorMove()
