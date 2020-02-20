@@ -7,19 +7,19 @@ using UnityEngine.SceneManagement;
 public class GameMenu : MonoBehaviour
 {
 
-    // Start is called before the first frame update
+    // Function for the start button
     void StartButton()
     {
 
-        //Load game scene when play button is pressed
+        // Load game scene when Fungus block calls for it
         SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);
     }
 
-    // Update is called once per frame
+    // Function for the quit button
     void QuitButton()
     {
 
-        //Exit the game when quit button is pressed
+        // Exit the game when quit button is pressed
         Application.Quit();
     }
 }
