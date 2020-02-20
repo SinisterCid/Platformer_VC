@@ -8,6 +8,7 @@ TagManager:
   - Orbit
   - Stick
   - Killzone
+  - Collect
   layers:
   - Default
   - TransparentFX

@@ -121,12 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a806d228900509b4c80502dac3fbb8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpread: 8
-  zSpread: 8
+  xSpread: 10
+  zSpread: 10
   yOffset: 3
   rotSpeed: 2
   rotateClockwise: 1
-  distanceToAttack: 10
+  distanceToAttack: 15
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -343,4 +343,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0014960d3a7fa3f40b5021687e5ed52a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 5
