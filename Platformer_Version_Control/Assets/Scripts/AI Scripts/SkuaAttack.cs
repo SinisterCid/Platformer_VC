@@ -9,6 +9,8 @@ public class SkuaAttack : StateMachineBehaviour
     private Transform playerPos;
     private Transform stickPos;
     public float speed;
+    public float minCarryDistance;
+    public float minStickDistance;
 
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -31,15 +33,15 @@ public class SkuaAttack : StateMachineBehaviour
         float distance = Vector3.Distance(playerPos.transform.position, animator.transform.position);
         float distanceToStick = Vector3.Distance(stickPos.transform.position, animator.transform.position);
 
-        //If the player is within a certain distance to the skua, set bool and change to life away state
-        if (distance <= 1)
+        //If the player is within a certain distance to the skua, set bool and change to lift away state
+        if (distance <= minCarryDistance)
         {
 
             animator.SetBool("Carry", true);
         }
 
         //If the player is within a certain distance to the stick, set bool and change to retreat state
-        if (distanceToStick <= 1.25f)
+        if (distanceToStick <= minStickDistance)
         {
 
             animator.SetBool("Hurt", true);
