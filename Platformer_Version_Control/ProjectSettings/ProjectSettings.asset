@@ -611,10 +611,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: af1cae8b-ad10-4559-93f4-da0ea70cfc96
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: Platformer_Version_Control
+  organizationId: dragona17
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
