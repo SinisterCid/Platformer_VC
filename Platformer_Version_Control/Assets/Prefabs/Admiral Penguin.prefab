@@ -405,8 +405,8 @@ TrailRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.008733749
-        value: 0.5957413
+        time: 0
+        value: 0.69148636
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -427,8 +427,8 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 0.7254902}
-      key1: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 0.41960785}
+      key0: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0.80784315}
+      key1: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 0.53333336}
       key2: {r: 1, g: 1, b: 1, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -544,6 +544,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+  canControl: 1
 --- !u!114 &2781899334331775568
 MonoBehaviour:
   m_ObjectHideFlags: 0
