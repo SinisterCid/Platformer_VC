@@ -9,6 +9,12 @@ TagManager:
   - Stick
   - Killzone
   - Collect
+  - FxTemporaire
+  - Orbit2
+  - Orbit3
+  - Orbit4
+  - Orbit5
+  - Nest
   layers:
   - Default
   - TransparentFX

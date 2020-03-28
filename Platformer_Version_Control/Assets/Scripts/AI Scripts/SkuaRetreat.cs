@@ -6,7 +6,7 @@ public class SkuaRetreat : StateMachineBehaviour
 {
 
     //Variables
-    private Transform orbitPos;
+    private Transform nestPos;
     public float speed;
     public float stopDistance;
 
@@ -15,7 +15,7 @@ public class SkuaRetreat : StateMachineBehaviour
     {
 
         //Reference origin of orbit
-        orbitPos = GameObject.FindGameObjectWithTag("Orbit").transform;
+        nestPos = GameObject.FindGameObjectWithTag("Nest").transform;
     }
 
     //OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -23,11 +23,11 @@ public class SkuaRetreat : StateMachineBehaviour
     {
 
         //Distance between origin of orbit and current position of skua
-        float distance = Vector3.Distance(orbitPos.position, animator.transform.position);
+        float distance = Vector3.Distance(nestPos.position, animator.transform.position);
 
         //Move towards origin of orbit at X speed
         float step = speed * Time.deltaTime;
-        animator.transform.position = Vector3.MoveTowards(animator.transform.position, orbitPos.position, step);
+        animator.transform.position = Vector3.MoveTowards(animator.transform.position, nestPos.position, step);
 
         //If distance to origin or orbit is small enough, set animation bools to false and return to patrol state
         if (distance <= stopDistance)

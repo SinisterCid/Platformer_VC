@@ -124,7 +124,7 @@ MonoBehaviour:
   speed: 5
   minCarryDistance: 2
   minStickDistance: 2
---- !u!114 &-828317072609773266
+--- !u!114 &-2742391500044432685
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a806d228900509b4c80502dac3fbb8e3, type: 3}
+  m_Script: {fileID: 11500000, guid: f3d17bd0f7769564ca725f1da30a1fe6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xSpread: 10
@@ -148,7 +148,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Cube
+  m_Name: AI4
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: SpotTarget
@@ -331,7 +331,7 @@ AnimatorState:
   m_Transitions:
   - {fileID: 20769512263096357}
   m_StateMachineBehaviours:
-  - {fileID: -828317072609773266}
+  - {fileID: -2742391500044432685}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
