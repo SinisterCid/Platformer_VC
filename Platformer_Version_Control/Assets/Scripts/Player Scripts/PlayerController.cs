@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     //variables
     Rigidbody rb;
     public float speed = 10;
+    public bool canControl = true;
+    float flying;
 
 
     void Start()
@@ -16,43 +18,41 @@ public class PlayerController : MonoBehaviour
 
         //Get rigidbody reference
         rb = GetComponent<Rigidbody>();
+
+        //variables to lock movement being lifted
+        canControl = true;
+        flying = transform.position.y;
     }
     void FixedUpdate()
     {
 
-        //Reference input
-        float moveHor = Input.GetAxis("Horizontal");
-        float moveVer = Input.GetAxis("Vertical");
+        if(canControl == true)
+        {
 
-        //Control movement speed using rigidbody
-        rb.velocity= (new Vector3(moveHor * speed, rb.velocity.y, moveVer * speed));
+            //Reference input
+            float moveHor = Input.GetAxis("Horizontal");
+            float moveVer = Input.GetAxis("Vertical");
+
+            //Control movement speed using rigidbody
+            rb.velocity = (new Vector3(moveHor * speed, rb.velocity.y, moveVer * speed));
+        }
     }
 
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && canControl == true)
         {
-            //StartCoroutine(Rotate(Vector3.up, -360, 0.3f));
+
             StartCoroutine(Rotate(0.3f));
         }
+
+        if (transform.position.y > flying)
+        {
+
+            canControl = false;
+        }
     }
-
-    //IEnumerator Rotate(Vector3 axis, float angle, float duration = 1.0f)
-    //{
-    //    Quaternion from = transform.rotation;
-    //    Quaternion to = transform.rotation;
-    //    to *= Quaternion.Euler(axis * angle);
-
-    //    float elapsed = 0.0f;
-    //    while (elapsed < duration)
-    //    {
-    //        transform.rotation = Quaternion.Slerp(from, to, elapsed / duration);
-    //        elapsed += Time.deltaTime;
-    //        yield return null;
-    //    }
-    //    transform.rotation = to;
-    //}
 
     IEnumerator Rotate(float duration)
     {
