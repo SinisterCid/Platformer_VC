@@ -28,6 +28,46 @@ public class PlayerController : MonoBehaviour
         rb.velocity= (new Vector3(moveHor * speed, rb.velocity.y, moveVer * speed));
     }
 
+    void Update()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //StartCoroutine(Rotate(Vector3.up, -360, 0.3f));
+            StartCoroutine(Rotate(0.3f));
+        }
+    }
+
+    //IEnumerator Rotate(Vector3 axis, float angle, float duration = 1.0f)
+    //{
+    //    Quaternion from = transform.rotation;
+    //    Quaternion to = transform.rotation;
+    //    to *= Quaternion.Euler(axis * angle);
+
+    //    float elapsed = 0.0f;
+    //    while (elapsed < duration)
+    //    {
+    //        transform.rotation = Quaternion.Slerp(from, to, elapsed / duration);
+    //        elapsed += Time.deltaTime;
+    //        yield return null;
+    //    }
+    //    transform.rotation = to;
+    //}
+
+    IEnumerator Rotate(float duration)
+    {
+        float startRotation = transform.eulerAngles.y;
+        float endRotation = startRotation - 360.0f;
+        float t = 0.0f;
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float yRotation = Mathf.Lerp(startRotation, endRotation, t / duration) % 360.0f;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, yRotation, transform.eulerAngles.z);
+            yield return null;
+        }
+    }
+
     //Collision to restart scene
     private void OnCollisionEnter(Collision collision)
     {
