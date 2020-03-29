@@ -85,6 +85,12 @@ public class PlayerController : MonoBehaviour
             canControl = false;
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+
+            SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);
+        }
+
     }
 
     IEnumerator Rotate(float duration)

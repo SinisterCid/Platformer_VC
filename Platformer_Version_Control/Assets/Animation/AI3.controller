@@ -121,9 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c523e74ccf4451f42a75d91c189bd06a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpread: 10
-  zSpread: 10
-  yOffset: 3
+  xSpread: 7
+  zSpread: 7
+  yOffset: 1
   rotSpeed: 2
   rotateClockwise: 1
   distanceToAttack: 15

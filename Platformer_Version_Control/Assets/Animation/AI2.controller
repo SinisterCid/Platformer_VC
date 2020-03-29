@@ -312,9 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89f1694f1316de349875eddf6ffd9014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSpread: 10
-  zSpread: 10
-  yOffset: 3
+  xSpread: 13
+  zSpread: 13
+  yOffset: 1
   rotSpeed: 2
   rotateClockwise: 1
   distanceToAttack: 15

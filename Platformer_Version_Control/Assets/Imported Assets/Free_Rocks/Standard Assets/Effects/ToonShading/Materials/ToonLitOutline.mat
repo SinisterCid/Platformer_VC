@@ -35,7 +35,7 @@ Material:
     - _Outline: 0.007014924
     - _Shininess: 0.7
     m_Colors:
-    - _Color: {r: 0.50251013, g: 0.50251013, b: 0.50251013, a: 1}
+    - _Color: {r: 0.056069776, g: 0.38555405, b: 0.5660378, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 1, g: 1, b: 1, a: 1}
