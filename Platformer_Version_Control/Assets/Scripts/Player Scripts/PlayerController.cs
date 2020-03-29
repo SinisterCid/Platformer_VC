@@ -8,10 +8,12 @@ public class PlayerController : MonoBehaviour
 
     //variables
     Rigidbody rb;
-    public float speed = 10;
+    public float speed;
     public bool canControl = true;
     float flying;
 
+    //cam variable
+    //private Camera cam;
 
     void Start()
     {
@@ -30,11 +32,41 @@ public class PlayerController : MonoBehaviour
         {
 
             //Reference input
-            float moveHor = Input.GetAxis("Horizontal");
-            float moveVer = Input.GetAxis("Vertical");
+            //float moveHor = Input.GetAxis("Horizontal");
+            //float moveVer = Input.GetAxis("Vertical");
 
             //Control movement speed using rigidbody
-            rb.velocity = (new Vector3(moveHor * speed, rb.velocity.y, moveVer * speed));
+            //rb.velocity = (new Vector3(moveHor * speed, rb.velocity.y, moveVer * speed));
+
+            // Getting the direction to move through player input
+            float hMove = Input.GetAxis("Horizontal");
+            float vMove = Input.GetAxis("Vertical");
+
+            // Get directions relative to camera
+            Vector3 forward = Camera.main.transform.forward;
+            Vector3 right = Camera.main.transform.right;
+
+            // Project forward and right direction on the horizontal plane (not up and down), then
+            // normalize to get magnitude of 1
+            forward.y = 0;
+            right.y = 0;
+            forward.Normalize();
+            right.Normalize();
+
+            // Set the direction for the player to move
+            Vector3 dir = right * hMove + forward * vMove;
+
+            // Set the direction's magnitude to 1 so that it does not interfere with the movement speed
+            dir.Normalize();
+
+            // Move the player by the direction multiplied by speed and delta time 
+            transform.position += dir * speed * Time.deltaTime;
+
+            // Set rotation to direction of movement if moving
+            if (dir != Vector3.zero)
+            {
+                transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(forward), 0.2f);
+            }
         }
     }
 
@@ -52,6 +84,7 @@ public class PlayerController : MonoBehaviour
 
             canControl = false;
         }
+
     }
 
     IEnumerator Rotate(float duration)
