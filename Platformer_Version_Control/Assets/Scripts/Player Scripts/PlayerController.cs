@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Analytics;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class PlayerController : MonoBehaviour
     float flying;
     public static int shellCounter;
     public Text shellText;
+
+    //Analytics
+    int numDeaths = 0;
+    int numRestarts = 0;
 
     void Start()
     {
@@ -84,7 +89,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
 
-            SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);  
+            SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);
+
+            // Analytics for restart
+            numRestarts++;
+            ReportRestarts(numRestarts);
         }
 
     }
@@ -114,6 +123,10 @@ public class PlayerController : MonoBehaviour
 
             //Restart Scene after touching the Killzone
             SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);
+
+            //Analytics for deaths
+            numDeaths++;
+            ReportPlayerDeaths(numDeaths);
         }
     }
 
@@ -128,7 +141,37 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
 
             shellText.text = "Seashells: " + shellCounter;
+
+            //Analytics for collectables
+            ReportCollectablesCollected(shellCounter);
         }
     }
 
+    // Reprots for how many shells have been collected by the player
+    public void ReportCollectablesCollected(int collectables)
+    {
+        Analytics.CustomEvent("pickUp", new Dictionary<string, object>
+            {
+                {"pickUp_Num", collectables}
+            });
+    }
+
+    // Reports for how many deaths the player had
+    public void ReportPlayerDeaths(int deaths)
+    {
+        Analytics.CustomEvent("playerDeaths", new Dictionary<string, object>
+        {
+            {"died", deaths},
+            {"timeElapsed", Time.timeSinceLevelLoad}
+        });
+    }
+
+    public void ReportRestarts(int restart)
+    {
+        Analytics.CustomEvent("restarts", new Dictionary<string, object>
+        {
+            {"restarted", restart},
+            {"timeElapsed", Time.timeSinceLevelLoad}
+        });
+    }
 }
