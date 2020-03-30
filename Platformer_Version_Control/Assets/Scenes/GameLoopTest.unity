@@ -2461,6 +2461,7 @@ GameObject:
   - component: {fileID: 922165119}
   - component: {fileID: 922165118}
   - component: {fileID: 922165117}
+  - component: {fileID: 922165122}
   m_Layer: 0
   m_Name: END GOAL
   m_TagString: Goal
@@ -2625,9 +2626,9 @@ MonoBehaviour:
   showAlways: 1
   showCount: 1
   extendPrevious: 0
-  fadeWhenDone: 1
+  fadeWhenDone: 0
   waitForClick: 1
-  stopVoiceover: 1
+  stopVoiceover: 0
   waitForVO: 0
   setSayDialog: {fileID: 0}
 --- !u!114 &922165120
@@ -2644,8 +2645,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 8
   indentLevel: 0
-  storyText: 'Petetric: No, we are not. So lets go home before you get carried off
-    by a skua.'
+  storyText: 'Petetric: Lets go home before you get carried off by a skua.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2672,7 +2672,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: 'Admiral: So we aren''t being attacked?'
+  storyText: 'Peteric: Your mother and I would be devastated if something happened
+    to you.'
+  description: 
+  character: {fileID: 0}
+  portrait: {fileID: 0}
+  voiceOverClip: {fileID: 0}
+  showAlways: 1
+  showCount: 1
+  extendPrevious: 0
+  fadeWhenDone: 0
+  waitForClick: 1
+  stopVoiceover: 0
+  waitForVO: 0
+  setSayDialog: {fileID: 0}
+--- !u!114 &922165122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922165110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 11
+  indentLevel: 0
+  storyText: 'Admiral: I''m sorry Dad.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2699,9 +2727,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  storyText: 'Peteric: Admiral! What have I said about easedropping? As well that
-    seal is no threat. She''s just a baby that got lost. Your mother and I were talking
-    about how to find and get her back to her home.'
+  storyText: 'Peteric: Admiral! It doesn''t matter how brave you are. You are too
+    young to be wandering around by yourself. '
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2728,9 +2755,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 3
   indentLevel: 0
-  storyText: 'Admiral: But Dad, I''m not afraid of anything! I''m going to find that
-    seal and show you! These seashells are proof that the seal is nearby, they''re
-    definitely from a necklace.'
+  storyText: 'Admiral: But Dad, I''m not afraid of anything! '
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -2828,6 +2853,7 @@ MonoBehaviour:
   - {fileID: 922165125}
   - {fileID: 922165123}
   - {fileID: 922165121}
+  - {fileID: 922165122}
   - {fileID: 922165120}
   - {fileID: 922165119}
   - {fileID: 922165118}
@@ -2858,7 +2884,7 @@ MonoBehaviour:
   selectedBlocks:
   - {fileID: 922165128}
   selectedCommands:
-  - {fileID: 922165119}
+  - {fileID: 922165118}
   variables: []
   description: 
   stepPause: 0
