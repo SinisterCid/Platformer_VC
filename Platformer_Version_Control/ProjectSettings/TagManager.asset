@@ -15,6 +15,7 @@ TagManager:
   - Orbit4
   - Orbit5
   - Nest
+  - Goal
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class CollectibleTest : MonoBehaviour
+public class Goal : MonoBehaviour
 {
 
     //On collision with player

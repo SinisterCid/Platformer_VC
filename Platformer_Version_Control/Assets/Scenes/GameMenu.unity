@@ -251,9 +251,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 135128630}
+  - {fileID: 135128620}
   selectedCommands:
-  - {fileID: 135128631}
+  - {fileID: 135128627}
   variables: []
   description: 
   stepPause: 0
@@ -311,7 +311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  storyText: Admiral the young and fearless penguin wishes to prove to his parents
+  storyText: Admiral, the young and fearless penguin, wishes to prove to his parents
     that he is a brave warrior.
   description: 
   character: {fileID: 0}
@@ -423,8 +423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 5
   indentLevel: 0
-  storyText: So, after over hearing his parents talk about a seal in the outskirts
-    of their kingdom, he decides to head there.
+  storyText: After overhearing his parents talk about misplacing their seashells,
+    he decides to head out to collect them.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -484,7 +484,7 @@ MonoBehaviour:
   durationOLD: 0
 --- !u!114 &135128630
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -512,7 +512,7 @@ MonoBehaviour:
   - {fileID: 135128631}
 --- !u!114 &135128631
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -540,7 +540,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &135128632
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -570,7 +570,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &135128633
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -599,7 +599,7 @@ MonoBehaviour:
   setSayDialog: {fileID: 0}
 --- !u!114 &135128634
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

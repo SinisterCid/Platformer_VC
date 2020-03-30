@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,9 +12,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public bool canControl = true;
     float flying;
-
-    //cam variable
-    //private Camera cam;
+    public static int shellCounter;
+    public Text shellText;
 
     void Start()
     {
@@ -30,13 +30,6 @@ public class PlayerController : MonoBehaviour
 
         if(canControl == true)
         {
-
-            //Reference input
-            //float moveHor = Input.GetAxis("Horizontal");
-            //float moveVer = Input.GetAxis("Vertical");
-
-            //Control movement speed using rigidbody
-            //rb.velocity = (new Vector3(moveHor * speed, rb.velocity.y, moveVer * speed));
 
             // Getting the direction to move through player input
             float hMove = Input.GetAxis("Horizontal");
@@ -88,7 +81,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
 
-            SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);
+            SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);  
         }
 
     }
@@ -117,6 +110,19 @@ public class PlayerController : MonoBehaviour
 
             //Restart Scene after touching the Killzone
             SceneManager.LoadScene("GameLoopTest", LoadSceneMode.Single);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+        if (other.gameObject.tag == "Collect")
+        {
+
+            shellCounter++;
+            Destroy(other.gameObject);
+
+            shellText.text = "Seashells: " + shellCounter;
         }
     }
 
