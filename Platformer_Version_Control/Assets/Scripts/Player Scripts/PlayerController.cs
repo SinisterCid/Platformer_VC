@@ -66,18 +66,21 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
+        //if player has control, press space to spin attack
         if (Input.GetKeyDown(KeyCode.Space) && canControl == true)
         {
 
             StartCoroutine(Rotate(0.3f));
         }
 
+        //if lifted up by skua, disable controls
         if (transform.position.y > flying)
         {
 
             canControl = false;
         }
 
+        //press R to restart scene
         if (Input.GetKeyDown(KeyCode.R))
         {
 
@@ -86,6 +89,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    //spin player character and child stick 360 degrees over time after space is pressed
     IEnumerator Rotate(float duration)
     {
         float startRotation = transform.eulerAngles.y;
@@ -116,6 +120,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
+        //if player character touches seashell, destroy seashell and add point
         if (other.gameObject.tag == "Collect")
         {
 

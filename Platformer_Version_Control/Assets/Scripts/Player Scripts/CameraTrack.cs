@@ -5,12 +5,14 @@ using UnityEngine;
 public class CameraTrack : MonoBehaviour
 {
 
+    //variables
     public Transform PlayerTransform;
     private Vector3 _cameraOffset;
 
     [Range(0.01f, 1.0f)]
     public float SmoothFactor = 0.5f;
 
+    //mouse controls
     public bool LookAtPlayer = false;
     public bool RotateAroundPlayer = true;
     public float RotationSpeed = 5.0f;
@@ -19,13 +21,14 @@ public class CameraTrack : MonoBehaviour
     void Start()
     {
 
+        //set camera position
         _cameraOffset = transform.position - PlayerTransform.position;
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        
+        //control camera direction and add mouse controls to rotate camera around player character
         if(RotateAroundPlayer)
         {
 
