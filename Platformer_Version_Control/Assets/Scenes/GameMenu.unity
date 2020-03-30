@@ -251,9 +251,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 135128620}
+  - {fileID: 135128630}
   selectedCommands:
-  - {fileID: 135128627}
+  - {fileID: 135128631}
   variables: []
   description: 
   stepPause: 0
@@ -524,8 +524,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: Avoid the Skuas, if they get to close just whack them with your stick.
-    If you get stuck hit R to reset.
+  storyText: 'Avoid the Skuas, if they get to close just whack them with your stick.
+
+
+    IF YOU GET STUCK, HIT R TO RESET.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -751,7 +753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &697418980
 MonoBehaviour:
   m_ObjectHideFlags: 0
