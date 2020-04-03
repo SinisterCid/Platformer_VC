@@ -251,9 +251,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 135128620}
+  - {fileID: 135128630}
   selectedCommands:
-  - {fileID: 135128628}
+  - {fileID: 135128631}
   variables: []
   description: 
   stepPause: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 11
   indentLevel: 0
-  storyText: 'Avoid the Skuas, if they get to close just whack them with your stick.
+  storyText: 'Avoid the Skuas, if they get to close press SPACE to whack them.
 
 
     IF YOU GET STUCK, HIT R TO RESET.'
