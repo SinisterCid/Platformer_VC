@@ -3,37 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Analytics;
-using Fungus;
 
 public class Goal : MonoBehaviour
 {
     int numberOfCompletion = 0;
-    //public Flowchart endgame;
 
-    //On collision with player
-    private void OnCollisionEnter(Fungus.Collision collision)
+    //When player collides with the goal
+    void OnTriggerEnter(Collider other)
     {
-        
-        //If the object tagged "player" collides with the collectible, change scene to the main menu
-        if (collision.gameObject.tag == "Player")
+        //If the object tagged "player" collides with the end goal, change scene to the endscene
+        if (other.tag == "Player")
         {
-            //SendMessage();       
+            SceneManager.LoadScene("EndScene", LoadSceneMode.Single);
+
             numberOfCompletion++;
+            // Analytics for game end
+            ReportGameEnd();
         }
-    }
-
-    //public void SendMessage()
-    //{
-      //  endgame.SendFungusMessage("EndGame");
-    //}
-
-    public void Endgame()
-    {
-        //Load the menu scene
-        SceneManager.LoadScene("GameMenu", LoadSceneMode.Single);
-
-        // Analytics for game end
-        ReportGameEnd();
     }
 
     // Reports how many players complete the game and how long
