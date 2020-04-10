@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public bool canControl = true;
     float flying;
-    public static int shellCounter;
+    public int shellCounter;
     public Text shellText;
 
     //Analytics
