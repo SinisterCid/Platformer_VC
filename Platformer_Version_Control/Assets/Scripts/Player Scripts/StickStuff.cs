@@ -8,6 +8,7 @@ public class StickStuff : MonoBehaviour
     //grab 3d fx
     public GameObject hit;
 
+    //hit counter for analytics
     int hitSkuas = 0;
 
     private void OnCollisionEnter(Collision col)
@@ -25,6 +26,7 @@ public class StickStuff : MonoBehaviour
         }
     }
 
+    //method for skua hits
     public void ReportSkuaHit(int hits)
     {
         Analytics.CustomEvent("skuaHit", new Dictionary<string, object>
