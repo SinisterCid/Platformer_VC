@@ -46,8 +46,6 @@ public class SkuaAttack : StateMachineBehaviour
 
             animator.SetBool("Hurt", true);
         }
-
-
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
